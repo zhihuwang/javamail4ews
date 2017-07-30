@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>org.gartcimore.java</groupId>
+    <groupId>com.github.zhihuwang</groupId>
     <artifactId>javamail4ews</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>JavaMail 4 EWS</name>
@@ -26,9 +26,9 @@
         <skipUnitTests>false</skipUnitTests>
         <maven-site-plugin.skip>false</maven-site-plugin.skip>
 
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>1.6</java.version>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
         <build.helper.maven.plugin.version>1.12</build.helper.maven.plugin.version>
 
@@ -39,6 +39,14 @@
         <version.findbugs.annotations>2.0.3</version.findbugs.annotations>
         <version.maven.site.plugin>3.4</version.maven.site.plugin>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>maven-release</name>
+            <url>http://129.184.13.31:7070/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -217,9 +225,9 @@
     </build>
 
     <scm>
-        <connection>scm:git:git@github.com:gartcimore/javamail4ews.git</connection>
-        <url>https://github.com/gartcimore/javamail4ews</url>
-        <developerConnection>scm:git:git@github.com:gartcimore/javamail4ews.git</developerConnection>
+        <connection>scm:git:git@github.com:zhihuwang/javamail4ews.git</connection>
+        <url>https://github.com/zhihuwang/javamail4ews</url>
+        <developerConnection>scm:git:git@github.com:zhihuwang/javamail4ews.git</developerConnection>
     </scm>
 
 </project>

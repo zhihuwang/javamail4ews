@@ -124,7 +124,14 @@ public final class Util {
 
 		try {
 			service.setUrl(new URI(host));
+			String autodiscoverUrl= getConfiguration(pSession).getString("org.sourceforge.net.javamail4ews.util.Util.autodiscoverUrl");
+			if (autodiscoverUrl!=null&&!autodiscoverUrl.trim().equals("")) {
+				service.autodiscoverUrl(autodiscoverUrl);
+			}
 		} catch (URISyntaxException e) {
+			throw new MessagingException(e.getMessage(), e);
+		}
+		catch (Exception e) {
 			throw new MessagingException(e.getMessage(), e);
 		}
 

@@ -152,6 +152,11 @@ public class EwsTransport extends Transport {
             throws MessagingException, IOException, ServiceLocalException {
 
         MessageBody mb = new MessageBody();
+       String contentType = part.getContentType();
+        //application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+        if(contentType.startsWith("application/pkcs7-mime")){
+            mb.setBodyType(BodyType.HTML);
+        }
         if (part.isMimeType(TEXT_PLAIN)) {
             String s = (String) part.getContent();
             mb.setBodyType(BodyType.Text);
